@@ -52,22 +52,12 @@ export default function Contact() {
   }, []);
 
   return (
-    <section
-      id="contact"
-      style={{
-        padding: "100px 40px",
-        background: "rgba(139,92,246,0.03)",
-        borderTop: "0.5px solid rgba(139,92,246,0.1)",
-      }}
-    >
+    <section id="contact" style={{ padding: "80px 20px", background: "rgba(139,92,246,0.03)", borderTop: "0.5px solid rgba(139,92,246,0.1)" }}>
       <div ref={ref} style={{ maxWidth: "700px", margin: "0 auto" }}>
 
-        {/* Header */}
-        <div style={{ marginBottom: "48px" }}>
-          <p style={{ fontSize: "11px", letterSpacing: "0.15em", color: "#8b5cf6", textTransform: "uppercase", marginBottom: "10px" }}>
-            contact
-          </p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "clamp(28px, 4vw, 40px)", color: "#fff", marginBottom: "20px" }}>
+        <div style={{ marginBottom: "40px" }}>
+          <p style={{ fontSize: "11px", letterSpacing: "0.15em", color: "#8b5cf6", textTransform: "uppercase", marginBottom: "10px" }}>contact</p>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "clamp(26px, 6vw, 40px)", color: "#fff", marginBottom: "16px" }}>
             Travaillons<br />ensemble
           </h2>
           <p style={{ fontSize: "14px", color: "rgba(232,230,240,0.6)", lineHeight: 1.85 }}>
@@ -77,14 +67,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Grille 2×2 */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "14px",
-          }}
-        >
+        <div className="contact-grid">
           {contactLinks.map(({ icon, label, value, href }) => (
             <a
               key={label}
@@ -95,7 +78,7 @@ export default function Contact() {
                 display: "flex",
                 alignItems: "center",
                 gap: "14px",
-                padding: "20px",
+                padding: "18px",
                 background: "rgba(255,255,255,0.025)",
                 border: "0.5px solid rgba(232,230,240,0.08)",
                 borderRadius: "12px",
@@ -103,46 +86,42 @@ export default function Contact() {
                 transition: "all 0.2s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(139,92,246,0.35)";
-                (e.currentTarget as HTMLAnchorElement).style.background = "rgba(139,92,246,0.06)";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.borderColor = "rgba(139,92,246,0.35)";
+                el.style.background = "rgba(139,92,246,0.06)";
+                el.style.transform = "translateY(-2px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(232,230,240,0.08)";
-                (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.025)";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.borderColor = "rgba(232,230,240,0.08)";
+                el.style.background = "rgba(255,255,255,0.025)";
+                el.style.transform = "translateY(0)";
               }}
             >
-              <div
-                style={{
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "10px",
-                  background: "rgba(139,92,246,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  color: "#a78bfa",
-                  flexShrink: 0,
-                }}
-              >
+              <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "rgba(139,92,246,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: 700, color: "#a78bfa", flexShrink: 0 }}>
                 {icon}
               </div>
               <div style={{ overflow: "hidden" }}>
-                <p style={{ fontSize: "10px", color: "#8b5cf6", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500, marginBottom: "3px" }}>
-                  {label}
-                </p>
-                <p style={{ fontSize: "13px", color: "rgba(232,230,240,0.7)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                  {value}
-                </p>
+                <p style={{ fontSize: "10px", color: "#8b5cf6", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500, marginBottom: "3px" }}>{label}</p>
+                <p style={{ fontSize: "13px", color: "rgba(232,230,240,0.7)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{value}</p>
               </div>
             </a>
           ))}
         </div>
-
       </div>
+
+      <style>{`
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+        @media (max-width: 480px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </section>
   );
 }

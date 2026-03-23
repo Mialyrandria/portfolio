@@ -1,84 +1,89 @@
-# Portfolio — Mialisoa Randriamanana
+# Mialisoa Randriamanana — Portfolio
 
-Portfolio personnel développé avec Next.js 14, Tailwind CSS et animations CSS.
+> Personal portfolio website built with Next.js 14, TypeScript and Tailwind CSS.
 
-## 🚀 Lancer le projet en local
+🌐 **Live** → [portfolio-mialyrandria.vercel.app](https://portfolio-qsg7qhzcs-mialyrandrias-projects.vercel.app/)
+
+---
+
+## Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS + inline styles |
+| Fonts | Syne · DM Sans (Google Fonts) |
+| Animations | CSS transitions + Intersection Observer |
+| Deployment | Vercel |
+
+---
+
+## Features
+
+- Responsive design — mobile, tablet, desktop
+- Smooth scroll with active section tracking in navbar
+- Animated skill bars triggered on scroll
+- Project cards with hover effects
+- Contact section with direct links (email, phone, LinkedIn, GitHub)
+- CV download button
+- Cursor glow effect
+- SEO optimized (metadata, Open Graph)
+
+---
+
+## Sections
+
+- **Hero** — Introduction, photo, tech stack chips
+- **About** — Profile, education, internship experience
+- **Skills** — Languages, frameworks, tools, soft skills
+- **Projects** — Clean-Ik, LearnFlow, Caisse hors ligne, OrientaFilière
+- **Contact** — Email, phone, LinkedIn, GitHub
+
+---
+
+## Run locally
 
 ```bash
-# 1. Installer les dépendances
+# Clone the repo
+git clone https://github.com/Mialyrandria/portfolio.git
+cd portfolio
+
+# Install dependencies
 npm install
 
-# 2. Lancer le serveur de développement
+# Start dev server
 npm run dev
 ```
 
-Ouvre [http://localhost:3000](http://localhost:3000) dans ton navigateur.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📸 Ajouter ta photo
+---
 
-Place ton fichier image dans :
+## Project Structure
+
 ```
-public/photo.jpg
-```
-La photo apparaîtra automatiquement dans le Hero. Format recommandé : carré, minimum 400×400px.
-
-## 📄 Ajouter ton CV
-
-Place ton CV en PDF dans :
-```
-public/cv-mialisoa-randriamanana.pdf
-```
-Il sera téléchargeable depuis le bouton dans la navbar.
-
-## 📧 Configurer le formulaire de contact (EmailJS)
-
-1. Crée un compte gratuit sur [emailjs.com](https://www.emailjs.com)
-2. Crée un **Service** (Gmail ou autre)
-3. Crée un **Template** avec ces variables :
-   - `{{from_name}}` — nom de l'expéditeur
-   - `{{from_email}}` — email de l'expéditeur
-   - `{{message}}` — contenu du message
-4. Dans `src/components/Contact.tsx`, remplace :
-   ```ts
-   const SERVICE_ID = "YOUR_SERVICE_ID";
-   const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-   const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-   ```
-
-## 🌐 Déployer sur Vercel
-
-```bash
-# 1. Initialiser git
-git init
-git add .
-git commit -m "initial portfolio"
-
-# 2. Créer un repo sur github.com, puis :
-git remote add origin https://github.com/TON_USERNAME/portfolio.git
-git push -u origin main
+src/
+├── app/
+│   ├── layout.tsx       # Root layout + metadata
+│   ├── page.tsx         # Main page
+│   └── globals.css      # Global styles + fonts
+└── components/
+    ├── Navbar.tsx        # Fixed navbar with scroll tracking
+    ├── Hero.tsx          # Hero section with photo
+    ├── About.tsx         # About + experience
+    ├── Skills.tsx        # Animated skill bars
+    ├── Projects.tsx      # Project cards
+    ├── Contact.tsx       # Contact links grid
+    └── Footer.tsx        # Footer
 ```
 
-Ensuite :
-1. Va sur [vercel.com](https://vercel.com)
-2. Clique **"Add New Project"**
-3. Importe ton repo GitHub
-4. Clique **Deploy** — c'est tout !
+---
 
-## 🎨 Personnaliser
+## Contact
 
-| Fichier | Ce que tu peux changer |
-|---|---|
-| `src/components/Hero.tsx` | Nom, titre, chips de tech |
-| `src/components/About.tsx` | Bio, formation, expériences |
-| `src/components/Skills.tsx` | Compétences et pourcentages |
-| `src/components/Projects.tsx` | Projets, descriptions, liens |
-| `src/components/Contact.tsx` | Email, téléphone, réseaux |
-| `src/app/globals.css` | Couleurs globales |
+**Mialisoa Randriamanana**
 
-## 🛠 Stack technique
-
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Google Fonts** — Syne + DM Sans
-- **EmailJS** — formulaire de contact sans backend
+- 📧 mialyrandriamanana731@gmail.com
+- 💼 [linkedin.com/in/mialy-randriamanana-184027390](https://www.linkedin.com/in/mialy-randriamanana-184027390/)
+- 🐙 [github.com/Mialyrandria](https://github.com/Mialyrandria)

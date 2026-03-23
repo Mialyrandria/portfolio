@@ -21,7 +21,7 @@ export default function Footer() {
       <div style={{ display: "flex", gap: "16px" }}>
         {[
           { label: "GitHub", href: "https://github.com/Mialyrandria" },
-          { label: "LinkedIn", href: "https://linkedin.com" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/mialy-randriamanana-184027390/" },
           { label: "Email", href: "mailto:mialyrandriamanana731@gmail.com" },
         ].map(({ label, href }) => (
           <a

@@ -2,7 +2,7 @@
 
 > Personal portfolio website built with Next.js 14, TypeScript and Tailwind CSS.
 
-🌐 **Live** → [portfolio-mialyrandria.vercel.app](https://portfolio-mialyrandria.vercel.app)
+🌐 **Live** → [portfolio-mialyrandria.vercel.app](https://portfolio-qsg7qhzcs-mialyrandrias-projects.vercel.app/)
 
 ---
 
